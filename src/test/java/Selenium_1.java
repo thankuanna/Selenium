@@ -6,12 +6,11 @@ public class Selenium_1 {
     @Test
     void OpeningBrowser()
     {
-       System.setProperty("webdriver.chrome.driver","C://ChromeDriver//chromedriver.exe");
+       System.setProperty("webdriver.chrome.driver","C://ChromeDriver//chromedriver.exe"); //setting up prop/path
        WebDriver driver = new ChromeDriver(); //create or opening browser
         driver.manage().window().maximize(); //maximizing;same for minimzing
        driver.get("https://www.obsqurazone.com");
        driver.getTitle();
-      // driver.getCurrentUrl();
        System.out.println("The url is :"+driver.getCurrentUrl());
         System.out.println("The source :"+driver.getPageSource());
        driver.close(); //closing browser
