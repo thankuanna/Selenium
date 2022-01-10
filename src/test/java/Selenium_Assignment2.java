@@ -25,6 +25,7 @@ public class Selenium_Assignment2 {
     void hyperlink()
     {
 List<WebElement> links =  driver.findElements(By.tagName("a"));
+//driver.findElements(By.className());
 int count_hyperlinks = links.size();
         System.out.println("total no of hyperlinks = "+ count_hyperlinks);
     }
@@ -32,7 +33,9 @@ int count_hyperlinks = links.size();
     @Test
     void table()
     {
-        List<WebElement> links =  driver.findElements(By.tagName(""));
+        List<WebElement> links =  driver.findElements(By.tagName("table"));
+        int count_table = links.size();
+        System.out.println("total no of tables ="+count_table);
 
     }
 

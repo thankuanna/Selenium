@@ -25,7 +25,7 @@ public class Selenium_Assignment {
         String expected = "Obsqura Zone Course : JavaScript";
 
         //verify title
-        Assert.assertEquals(title_page, expected, "title verified");
+        Assert.assertEquals(title_page, expected, "title not verified");
         driver.close();
     }
 @Test
