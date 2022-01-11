@@ -7,7 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class SampleHtml {
+public class SampleHtml {  
+
     WebDriver driver;
     @BeforeMethod
     void OpenBrowser()
@@ -21,14 +22,30 @@ public class SampleHtml {
     @Test(enabled = false)
     void verifytable2byid()
     {
-        //WebElement element = driver.findElement(
-        //Assert.assertTrue(element.isDisplayed());
+        WebElement element = driver.findElement(By.id("table2"));
+        Assert.assertTrue(element.isDisplayed());
+
+    }
+    @Test
+    void verifytable2byname()
+    {
+        WebElement element = driver.findElement(By.name("value"));
+        Assert.assertTrue(element.isDisplayed());
 
     }
     @Test(enabled = true)
     void verifytable3byclassname()
     {
-       // WebElement element = driver.findElement(By.className("table3"));
+       WebElement element = driver.findElement(By.className("table3"));
+       // WebElement element = driver.findElement(By.xpath("//table[@class=' table3']"));
+        Assert.assertTrue(element.isDisplayed());
+
+    }
+
+    @Test(enabled = true)
+    void verifytable3byxpath()
+    {
+
         WebElement element = driver.findElement(By.xpath("//table[@class=' table3']"));
         Assert.assertTrue(element.isDisplayed());
 
