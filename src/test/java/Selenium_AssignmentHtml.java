@@ -7,9 +7,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class Selenium_AssignmentHtml {
-    
+import java.util.Iterator;
+import java.util.List;
 
+public class Selenium_AssignmentHtml {
 
     WebDriver driver;
     @BeforeMethod
@@ -60,6 +61,27 @@ Assert.assertTrue(table1.isDisplayed());
     Assert.assertTrue(table2.isDisplayed());
     WebElement table3= driver.findElement(By.xpath("//div[@class='rt-tr -odd']"));
     Assert.assertTrue(table3.isDisplayed());
+
+}
+@Test
+void checknoofrows()
+{
+    driver.navigate().to("https://demoqa.com/webtables");
+    List<WebElement> elements =driver.findElements(By.className("rt-tr-group"));
+    Iterator<WebElement> itr =elements.iterator();
+    int count = 0;
+    while (itr.hasNext())
+    {
+        String data = itr.next().getText(); // GETTING THE TEXT INSIDE THE row
+        if(!data.isEmpty())// doubt not getting no of rows,
+        {
+            count= count+1;
+        }
+        else {
+            System.out.println("no of rows with data inside the table =" + count);
+            break;
+        }
+    }
 
 }
     @AfterMethod
