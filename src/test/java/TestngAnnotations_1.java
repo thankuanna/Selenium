@@ -1,12 +1,25 @@
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestngAnnotations_1 {
+    @BeforeClass
+    void beforeclass()
+    {
+        System.out.println("this is the test before class ");
+    }
+    @BeforeTest
+    void bt()
+    {
+        System.out.println("this is the test before test ");
+    }
     @BeforeMethod
     void bm()
     {
         System.out.println("This is test before method");
+    }
+    @BeforeSuite
+    void bs()
+    {
+        System.out.println("this is the test before suite ");
     }
 
     @Test(priority = 0)
@@ -29,5 +42,20 @@ public class TestngAnnotations_1 {
     void am()
     {
         System.out.println("this is the test after method ");
+    }
+    @AfterClass
+    void  afterclass()
+    {
+        System.out.println("this is the test after class ");
+    }
+    @AfterTest
+    void at()
+    {
+        System.out.println("this is the test after test ");
+    }
+    @AfterSuite
+    void as()
+    {
+        System.out.println("this is the test after suite ");
     }
 }

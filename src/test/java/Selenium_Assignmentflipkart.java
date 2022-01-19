@@ -22,9 +22,10 @@ public class Selenium_Assignmentflipkart
 @Test
 void mobile()
 {
-    driver.navigate().to("https://www.flipkart.com/mobiles/pr?sid=tyy,4io&otracker=categorytree");
-    WebElement realme = driver.findElement(By.xpath("//img[contains(@alt,'realme ')]"));
-    Assert.assertTrue(realme.isDisplayed(),"realme phones not getting displayed");
+    WebElement searchbox = driver.findElement(By.xpath("//input[@name='q']"));
+    Assert.assertTrue(searchbox.isDisplayed(),"search box not present");
+    searchbox.sendKeys("realme");
+    searchbox.submit();
 }
 
     @AfterMethod

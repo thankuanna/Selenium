@@ -33,9 +33,10 @@ public class Selenium_AssignmentTextEntering {
         WebElement permanentaddr = driver.findElement(By.id("permanentAddress"));
         permanentaddr.sendKeys("abcdefghi");
         Assert.assertTrue(permanentaddr.isDisplayed(),"permanentaddr not found");
-       // WebElement submitbutton = driver.findElement(By.xpath("//button[@id='submit']"));///doubt
-       // submitbutton.click();
-     //   Assert.assertTrue(submitbutton.isDisplayed(),"submit button not found");
+        WebElement submitbutton = driver.findElement(By.xpath("//button[@id='submit']"));///doubt
+        Assert.assertTrue(submitbutton.isDisplayed(),"submit button not found");
+        submitbutton.click();
+
 
         //WebElement afterdisplaying= driver.findElement(By.className("//div[@class='border col-md-12 col-sm-12']"));
       // Assert.assertTrue(afterdisplaying.isDisplayed(),"text after entering is not displayed");

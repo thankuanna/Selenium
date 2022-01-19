@@ -70,14 +70,12 @@ void checknoofrows()
     List<WebElement> elements =driver.findElements(By.className("rt-tr-group"));
     Iterator<WebElement> itr =elements.iterator();
     int count = 0;
-    while (itr.hasNext())
-    {
+    while (itr.hasNext()) {
         String data = itr.next().getText(); // GETTING THE TEXT INSIDE THE row
-        if(!data.isEmpty())// doubt not getting no of rows,
+        if (!data.isEmpty() && !data.equalsIgnoreCase("       "))
         {
-            count= count+1;
-        }
-        else {
+            count = count + 1;
+        } else {
             System.out.println("no of rows with data inside the table =" + count);
             break;
         }
@@ -91,3 +89,20 @@ void checknoofrows()
     }
 
 }
+   /* while(itr.hasNext())
+    {
+        String data=itr.next().getText();
+        if(!data.isBlank())
+        {
+            counter=counter+1;
+        }
+        else
+        {
+            System.out.println("No Of Rows With Data : "+ counter);
+            break;
+        }
+    }
+
+}*/
+
+
